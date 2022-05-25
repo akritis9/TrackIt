@@ -23,12 +23,12 @@ connection.once('open', () => {
 }) 
 
 /*load the routers from other files */
-/*const exercisesRouter = require('./routes/exercises');
-const userRouter = require('./routes/users');*/
+const exercisesRouter = require('./routes/exercises');
+const userRouter = require('./routes/users');
 
 /* add routers as middleware */
-/*app.use('/exercises', exercisesRouter);
-app.use('/users', userRouter);*/
+app.use('/exercises', exercisesRouter);
+app.use('/users', userRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
