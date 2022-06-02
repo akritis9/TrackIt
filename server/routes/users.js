@@ -10,12 +10,14 @@ Finally, the new user is saved to the database with the save() method and we ret
 const router = require('express').Router();
 let User = require('../models/user.model');
 
+//  get a list of all the users
 router.route('/').get((req, res) => {
   User.find()
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// adds a new user
 router.route('/add').post((req, res) => {
   const username = req.body.username;
 
